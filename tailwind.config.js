@@ -5,7 +5,23 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        'moving-line': {
+            from: {
+                transformY: '-100%',
+                opacity: '0',
+            },
+            to: {
+                transformY: '0',
+                opacity: '1',
+            },
+          },
+      },
+      animation: {
+          'moving-line': 'moving-line 1.5s ease-out forwards',
+      },
+    },
   },
   plugins: [],
 }
