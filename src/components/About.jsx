@@ -16,17 +16,16 @@ const AboutSection = () => {
           About Me
         </h1>
         <span className="block mb-5 font-semibold dark:text-white">
-        I am a Polyglot Software Engineer with 4+ years experience, building for SaaS and Enterprise solutions.
+        I am a Full-Stack Software Engineer currently pursuing Diploma in Artificial Intellignece.
         </span>
         <span className="block mb-5 font-semibold dark:text-white">
-        Building cross-platform mobile apps right now - Android & iOS using React Native.
+        Building web application and AI apps right now - using React, Node and Django.
         </span>
         <span className="block mb-5 font-semibold dark:text-white">
         I'm a constant learner and love to build side projects using cutting-edge toolsets adapting to the ever-changing landscape.
         </span>
         <span className="block mb-5 font-semibold dark:text-white">
-        I love functional programming and strongly typed languages; with referential transparency, and immutability, its become possible to build very declarative, composable - (functions being the first citizens!), highly concurrent, and easier to reason about applications.
-        </span>
+        "I'm deeply passionate about functional programming and strongly typed languages. With features like referential transparency and immutability, we can create applications that are highly declarative, composable, and easier to reason about. Functions are treated as first-class citizens, enabling us to build concurrent systems seamlessly.        </span>
         <span className="block mb-5 font-semibold dark:text-white">
         Want to chat? Let's connect!
         </span>
@@ -52,7 +51,7 @@ const AboutSectionFooter = () => {
         Let's Get in Touch
       </span>
       <div className="m-auto flex space-x-6 mb-3">
-        <a href="https://www.linkedin.com/in/sumit-mittal22/">
+        <a href="https://www.linkedin.com/in/keshav-anand-singh-8b4427154/">
           <motion.button
             whileHover={{
               scale: 1.2,
@@ -70,7 +69,7 @@ const AboutSectionFooter = () => {
             <span className="ml-2 font-md text-base sm:text-lg">LinkedIn</span>
           </motion.button>
         </a>
-        <a href="mailto:sumit22mittal@gmail.com">
+        <a href="mailto:keshavanandsingh89@gmail.com">
           <motion.button
             whileHover={{
               scale: 1.2,

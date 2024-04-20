@@ -26,3 +26,7 @@
 .slick-next{
     right: -10% !important;
 }
+
+.dark .slick-dots button:before{
+    color: white;
+}
