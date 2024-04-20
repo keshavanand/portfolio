@@ -4,7 +4,7 @@ const AboutSection = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 lg:space-x-6 mt-10 mb-10">
       <div className="text-gray-500  text-md font-bold">
-        <h1 className="text-gray-800  flex gap-2 font-bold mb-4 text-4xl">
+        <h1 className="text-gray-800  dark:text-white flex gap-2 font-bold mb-4 text-4xl">
           <motion.div
             whileHover={{
               scale: [1, 3, 3, 1, 1],
@@ -15,19 +15,19 @@ const AboutSection = () => {
           </motion.div>
           About Me
         </h1>
-        <span className="block mb-5 font-semibold ">
+        <span className="block mb-5 font-semibold dark:text-white">
         I am a Polyglot Software Engineer with 4+ years experience, building for SaaS and Enterprise solutions.
         </span>
-        <span className="block mb-5 font-semibold ">
+        <span className="block mb-5 font-semibold dark:text-white">
         Building cross-platform mobile apps right now - Android & iOS using React Native.
         </span>
-        <span className="block mb-5 font-semibold">
+        <span className="block mb-5 font-semibold dark:text-white">
         I'm a constant learner and love to build side projects using cutting-edge toolsets adapting to the ever-changing landscape.
         </span>
-        <span className="block mb-5 font-semibold">
+        <span className="block mb-5 font-semibold dark:text-white">
         I love functional programming and strongly typed languages; with referential transparency, and immutability, its become possible to build very declarative, composable - (functions being the first citizens!), highly concurrent, and easier to reason about applications.
         </span>
-        <span className="block mb-5 font-semibold">
+        <span className="block mb-5 font-semibold dark:text-white">
         Want to chat? Let's connect!
         </span>
       </div>
@@ -48,7 +48,7 @@ const AboutSection = () => {
 const AboutSectionFooter = () => {
   return (
     <div className="flex flex-col gap-3">
-      <span className="m-auto font-bold block text-4xl md:text-5xl text-black ">
+      <span className="m-auto font-bold block text-4xl md:text-5xl text-black dark:text-white">
         Let's Get in Touch
       </span>
       <div className="m-auto flex space-x-6 mb-3">
@@ -89,7 +89,7 @@ const AboutSectionFooter = () => {
           </motion.button>
         </a>
       </div>
-      <span className="px-20 text-center m-auto font-semibold md:font-bold block text-md sm:text-2xl text-black">
+      <span className="px-20 text-center m-auto font-semibold md:font-bold block text-md sm:text-2xl text-black dark:text-white">
         Built with ❤️ using React, Tailwind and Framer Motion
       </span>
     </div>

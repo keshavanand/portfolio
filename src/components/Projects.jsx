@@ -19,7 +19,7 @@ const backcountryFeatures = [
 		id: 1,
 		name: "Stack Explanation",
 		description:
-			"In recent years, there have been many innovations in building a cross-platform mobile app. Kotlin Multiplatform is another example built by JetBrains, and I wanted to take a stab at it and learn some Kotlin, too, on the way. I built this app to explore this area. It is incredible how KMM can share business logic code between iOS and Android (with Kotlin Native running on iOS) while building UIs using platform-specific libraries like SwiftUI and Jetpack Compose.",
+			"The project involves building a robust blog application using Django, a high-level Python web framework. Starting from the basics, the project goes through essential concepts such as models, views, templates, and URLs, gradually introducing more advanced features commonly found in modern blogging platforms. With a focus on user interaction and backend optimization, the application covers a wide range of functionalities, including tagging, commenting, sharing, pagination, and full-text search.",
 		icon: GlobeAltIcon,
 	},
 	{
@@ -98,9 +98,9 @@ const Projects = () => {
 		arrows: true
 	};
 	return (
-		<div className="pt-20 mx-64 animate-moving-line ">
-			<div id="Projects" className="lg:space-x-6 mt-20 xl:mt-28">
-				<div className="text-black">
+		<div id="Projects" className="pt-1 mx-64 animate-moving-line ">
+			<div className="lg:space-x-6 mt-20 xl:mt-28">
+				<div className="text-black dark:text-white">
 					<h2 className="flex gap-2 font-bold mb-4 text-4xl">
 						<motion.div
 							whileHover={{
@@ -115,7 +115,7 @@ const Projects = () => {
 					<Slider {...settings}>
 						<div>
 							{/* Your first component */}
-							{/* Kotlin kmm movie browser */}
+							{/* Blog django */}
 							<div className="grid grid-cols-1 lg:grid-cols-2 lg:space-x-6 mb-16 ">
 								<dl className="mt-10 px-2 space-y-10 order-last lg:order-first">
 									{backcountryFeatures.map((item) => (
@@ -129,7 +129,7 @@ const Projects = () => {
 												>
 													<item.icon className="h-6 w-6" aria-hidden="true" />
 												</motion.div>
-												<p className="ml-16 text-xl text-gray-800  leading-6 font-bold ">
+												<p className="ml-16 text-xl text-gray-800  leading-6 font-bold dark:text-white">
 													{item.name}
 												</p>
 											</dt>
@@ -150,14 +150,14 @@ const Projects = () => {
 											<img
 												className="relative mx-auto rounded-xl border-gray-500 border-2 h-84"
 												width={490}
-												src="./moviebrowser.png"
-												alt=""
+												src="./blog-django.png"
+												alt="image"
 											/>
 										</motion.div>
 										<div className="flex flex-col px-6 py-4">
 											<div className="flex justify-between">
-												<h2 className="text-2xl sm:text-3xl font-bold text-black">
-													Kotlin Multiplatform Movie Browser
+												<h2 className="text-2xl sm:text-3xl font-bold text-black dark:text-white">
+													Django Blog Web Application
 												</h2>
 												{/* links */}
 												<div className="flex gap-6">
@@ -168,7 +168,7 @@ const Projects = () => {
 														}}
 														whileTap={{ scale: 0.8 }}
 														alt="github"
-														href="https://github.com/Sumit2202/kotlinMultiplatform-movie-browser"
+														href="https://github.com/keshavanand"
 													>
 														<FaGithub aria-label="github" size={28} />
 													</motion.a>
@@ -265,7 +265,7 @@ const Projects = () => {
 
 											</div>
 											{/* Description */}
-											<div className="py-4  text-gray-800 font-semibold">
+											<div className="py-4  text-gray-800 font-semibold dark:text-gray-500 ">
 												A cross platform mobile app for browsing movies, built with KMM, Kotlin, Ktor and decompose.
 											</div>
 										</div>
@@ -289,7 +289,7 @@ const Projects = () => {
 												>
 													<item.icon className="h-6 w-6" aria-hidden="true" />
 												</motion.div>
-												<p className="ml-16 text-gray-800 text-xl  leading-6 font-bold ">
+												<p className="ml-16 text-gray-800 text-xl  leading-6 font-bold dark:text-white">
 													{item.name}
 												</p>
 											</dt>
@@ -317,7 +317,7 @@ const Projects = () => {
 										</motion.div>
 										<div className="flex flex-col px-6 py-4">
 											<div className="flex justify-between">
-												<h2 className="text-3xl font-bold text-black ">
+												<h2 className="text-3xl font-bold text-black dark:text-white">
 													Todo Real Time
 												</h2>
 												{/* External links */}
@@ -425,7 +425,7 @@ const Projects = () => {
 												</motion.a>
 											</div>
 											{/* Description */}
-											<div className="py-4 font-semibold text-gray-800  ">
+											<div className="py-4 font-semibold text-gray-800 dark:text-gray-500  ">
 												A screenshot showcasing a React Native app for keeping a list of Todos,
 												accross devices, built with React Native,Expo, React Native Paper, and Firebase.
 											</div>
@@ -450,7 +450,7 @@ const Projects = () => {
 												>
 													<item.icon className="h-6 w-6" aria-hidden="true" />
 												</motion.div>
-												<p className="ml-16 text-gray-800  text-xl leading-6 font-bold ">
+												<p className="ml-16 text-gray-800  text-xl leading-6 font-bold dark:text-white">
 													{item.name}
 												</p>
 											</dt>
@@ -478,7 +478,7 @@ const Projects = () => {
 
 										<div className="flex flex-col px-6 py-4">
 											<div className="flex justify-between">
-												<h2 className="text-3xl font-bold text-black ">
+												<h2 className="text-3xl font-bold text-black dark:text-white">
 													Wordle
 												</h2>
 												{/* links */}
@@ -539,7 +539,7 @@ const Projects = () => {
 												</motion.a>
 											</div>
 											{/* Description */}
-											<div className="py-4 font-semibold text-gray-800  ">
+											<div className="py-4 font-semibold text-gray-800 dark:text-gray-500 ">
 												A wordle Clone built using React and Tailwind CSS. State
 												Management via Hooks.
 											</div>

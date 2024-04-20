@@ -6,8 +6,17 @@
     color: #000;
 }
 
+.dark .slick-prev:before{
+    color: white;
+}
+
 .slick-next::before{
     color: #000000;
+}
+
+
+.dark .slick-next:before{
+    color: white;
 }
 
 .slick-prev{
