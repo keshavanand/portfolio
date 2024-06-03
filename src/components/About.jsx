@@ -25,7 +25,7 @@ const AboutSection = () => {
         I'm a constant learner and love to build side projects using cutting-edge toolsets adapting to the ever-changing landscape.
         </span>
         <span className="block mb-5 font-semibold dark:text-white">
-        "I'm deeply passionate about functional programming and strongly typed languages. With features like referential transparency and immutability, we can create applications that are highly declarative, composable, and easier to reason about. Functions are treated as first-class citizens, enabling us to build concurrent systems seamlessly.        </span>
+            I'm really excited about artificial intelligence because I believe it can change the world for the better. I love learning about how AI works, like teaching computers to understand language or make decisions. My passion for AI keeps me motivated to learn more and find new ways to use it to make cool stuff that helps people.        </span>
         <span className="block mb-5 font-semibold dark:text-white">
         Want to chat? Let's connect!
         </span>

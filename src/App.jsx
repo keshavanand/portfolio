@@ -5,7 +5,7 @@ import About from "./components/About"
 
 function App() {
   return (
-    <div className="dark:bg-gray-800">
+    <div className="dark:bg-gray-800 bg-cover bg-center bg-[url('./bg.png')] dark:bg-[url('#')]">
       <Header/>
       <Dashboard/>
       <Projects/>
