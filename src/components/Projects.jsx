@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { GlobeAltIcon } from "@heroicons/react/outline";
 import { motion } from "framer-motion";
 import {
@@ -17,7 +18,8 @@ import { Blog, Shop, Social } from "./projects/DjangoProjects";
 import { useState } from "react";
 import { Medium } from "./projects/NodeReactProjects";
 import { Paytm } from "./projects/NextProjects";
-
+import { Spam, Ksi } from "./projects/AIProjects";
+import {Hospital} from "./projects/AndroidProjects"
 const Projects = () => {
 	const settings = {
 		dots: true,
@@ -31,10 +33,11 @@ const Projects = () => {
 	};
 
 	const DjangoProjects = () => <Slider {...settings} ><Blog/><Shop/><Social/></Slider>
-	const AIProjectOne = () => <Slider {...settings}><Social/><Social/></Slider>
-	const AllProjects = () => <Slider {...settings}><Blog/><Social/></Slider>
+	const AIProjectOne = () => <Slider {...settings}><Spam/><Ksi/></Slider>
+	const AllProjects = () => <Slider {...settings}><Blog/><Spam/><Medium/><Social/><Ksi/><Paytm/></Slider>
 	const NodeProjects = () => <Slider {...settings}><Medium/><Medium/></Slider>
 	const NextProjects = () => <Slider {...settings}><Paytm/><Paytm/></Slider>
+	const AndroidProjects = () => <Slider {...settings}><Hospital/><Hospital/></Slider>
 
 
 	const [showoProjects, setProjects] = useState(AllProjects);
@@ -52,6 +55,9 @@ const Projects = () => {
 				break;
 			case 'next':
 				setProjects(NextProjects)
+				break
+			case 'android':
+				setProjects(AndroidProjects)
 				break
 			default:
 				setProjects(AllProjects)

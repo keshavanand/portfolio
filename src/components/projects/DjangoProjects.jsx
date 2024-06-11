@@ -34,10 +34,10 @@ export const Blog = () => {
         deploy: "#",
         description: "A comprehensive blog application built with Django, featuring user authentication, tagging, post recommendations, full-text search, and a robust commenting system. The project emphasizes SEO optimization and responsive design to enhance user engagement and search engine visibility.",
         libraries: [{link:"https://www.djangoproject.com/", image:"./django-logo.png", name:"Django Framework", icon:""},
-                    {link:"https://developer.android.com/develop/ui/compose", image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjC97Z8BResg5dlPqczsRCFhP6zewWX0X0e7fVPG-G7PuUZwwZVsi9OPoqJYkgqT2h0FI95SsmWzVEgpt8b8HAqFiIxZ98TFtY4lE0b8UrtVJ2HrJebRwl6C9DslsQDl9KnBIrdHS6LtkY/s1600/jetpack+compose+icon_RGB.png", name:"Jetpack Compose"},
-                    {link:"", image:"", name:""},
-                    {link:"", image:"", name:""},
-                    {link:"", image:"", name:""}
+                    {link:"https://django-taggit.readthedocs.io/en/latest/", image:"https://avatars.githubusercontent.com/u/99400294?s=64&v=4", name:"Django Taggit", icon:""},
+                    {link:"https://www.postgresql.org/", image:"https://www.postgresql.org/media/img/about/press/elephant.png", name:"PostgreSQL"},
+                    {link:"https://getbootstrap.com/", image:"https://framerusercontent.com/images/btbksTQnswjezUKyzZmXPOtLkKQ.jpg", name:"Bootstrap"},
+                    {link:"https://www.javascript.com/", image:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/768px-JavaScript-logo.png", name:"JavaScript"},
                 ],
         image: "./blog-django.png"
     }
@@ -76,10 +76,10 @@ export const Social = () => {
         deploy: "#",
         description: "A dynamic social networking platform developed using Django and Django Channels, enabling users to share images, follow others, and receive real-time notifications. The site includes social authentication, image bookmarking, and interactive features to foster user interaction and community building.",
         libraries: [{link:"https://www.djangoproject.com/", image:"./django-logo.png", name:"Django Framework", icon:""},
-                    {link:"https://developer.android.com/develop/ui/compose", image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjC97Z8BResg5dlPqczsRCFhP6zewWX0X0e7fVPG-G7PuUZwwZVsi9OPoqJYkgqT2h0FI95SsmWzVEgpt8b8HAqFiIxZ98TFtY4lE0b8UrtVJ2HrJebRwl6C9DslsQDl9KnBIrdHS6LtkY/s1600/jetpack+compose+icon_RGB.png", name:"Jetpack Compose"},
-                    {link:"", image:"", name:""},
-                    {link:"", image:"", name:""},
-                    {link:"", image:"", name:""}
+                    {link:"https://channels.readthedocs.io/en/latest/", image:"https://user-images.githubusercontent.com/6927678/36393573-789e7bc2-15b0-11e8-9a31-49f58e03a5c9.png", name:"Django Channels"},
+                    {link:"https://www.postgresql.org/", image:"https://www.postgresql.org/media/img/about/press/elephant.png", name:"PostgreSQL"},
+                    {link:"https://www.javascript.com/", image:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/768px-JavaScript-logo.png", name:"JavaScript"},
+                    {link:"https://oauth.net/2/", image:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Oauth_logo.svg/598px-Oauth_logo.svg.png", name:"OAuth"}
                 ],
         image: "./social.png"
     }
@@ -113,15 +113,15 @@ export const Shop = () => {
     ];
     
     const dict = {
-        name: 'Django Blog Web Application',
+        name: 'Django Shop App',
         git: "https://github.com/keshavanand",
         deploy: "#",
         description: "An e-commerce platform created with Django, featuring a product catalog, shopping cart, and order management system. The project integrates a payment gateway for secure transactions and employs Celery and RabbitMQ for efficient asynchronous task handling, ensuring a smooth and reliable user experience.",
         libraries: [{link:"https://www.djangoproject.com/", image:"./django-logo.png", name:"Django Framework", icon:""},
-                    {link:"https://developer.android.com/develop/ui/compose", image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjC97Z8BResg5dlPqczsRCFhP6zewWX0X0e7fVPG-G7PuUZwwZVsi9OPoqJYkgqT2h0FI95SsmWzVEgpt8b8HAqFiIxZ98TFtY4lE0b8UrtVJ2HrJebRwl6C9DslsQDl9KnBIrdHS6LtkY/s1600/jetpack+compose+icon_RGB.png", name:"Jetpack Compose"},
-                    {link:"", image:"", name:""},
-                    {link:"", image:"", name:""},
-                    {link:"", image:"", name:""}
+                    {link:"https://pypi.org/project/celery/", image:"https://awesome-astra.github.io/docs/img/celery/celery_logo.png", name:"Celery"},
+                    {link:"https://www.rabbitmq.com/", image:"https://static-00.iconduck.com/assets.00/rabbitmq-icon-484x512-s9lfaapn.png", name:"RabbitMQ"},
+                    {link:"https://stripe.com/en-ca", image:"https://logos-world.net/wp-content/uploads/2021/03/Stripe-Emblem.png", name:"Stripe"},
+                    {link:"https://www.javascript.com/", image:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/768px-JavaScript-logo.png", name:"JavaScript"},
                 ],
         image: "./shop.png"
     }

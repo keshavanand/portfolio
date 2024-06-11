@@ -1,4 +1,6 @@
 import { LuRocket } from "react-icons/lu";
+import { motion } from "framer-motion";
+
 export function Dashboard(){
     return (
         <div id="dashboard" className="dark:bg-gray-800 pt-20 mx-64 animate-moving-line ">
@@ -13,7 +15,16 @@ export function Dashboard(){
                 <span className="text-indigo-500 text-2xl text-center sm:text-3xl font-medium sm:font-bold pt-10"> A Full-Stack Developer with an interest in Artifical Intelligence</span>
             </div>
             <div className=" text-black flex flex-row text-md md:text-lg lg:text-2xl font-md md:font-lg lg:font-xl pt-10">
-                <div className="text-4xl my-auto text-indigo-500"><LuRocket></LuRocket></div>
+                <div className="text-4xl my-auto text-indigo-500">
+                    <motion.div
+                                whileHover={{
+                                    scale: [1, 3, 3, 1, 1],
+                                    rotate: [0, 0, 270, 270, 0],
+                                }}
+                            >
+                                <LuRocket></LuRocket>
+                    </motion.div>
+                </div>
                 <p className="dark:text-gray-400 ml-5 mt-1 text-center font-semibold text-xl sm:text-2xl">Currently exploring new opportunities and working on some side projects.</p>
             </div>
             <div className="pt-10 flex flex-wrap justify-center sm:justify-start gap-4 flex-row space-x-3 mb-3">
