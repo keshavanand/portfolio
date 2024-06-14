@@ -80,3 +80,41 @@ export const Spam = () => {
     return <Slide features={backcountryFeatures} dicts={dict} />
     
 }
+
+export const Weapon = () => {
+    const backcountryFeatures = [
+        {
+            id: 1,
+            name: "Stack Explanation",
+            description:"The development stack included Python for its extensive support in machine learning and computer vision. OpenCV was used for handling image and video processing, providing functions for reading video streams, processing frames, and displaying results. YOLOv3, a state-of-the-art object detection algorithm, was utilized for its ability to detect objects accurately and efficiently. NumPy facilitated numerical operations, enabling efficient data handling and manipulation required for image processing tasks.",
+            icon: GlobeAltIcon,
+        },
+        {
+            id: 2,
+            name: "Problems and Thought Process",
+            description:"One of the main challenges was to configure and fine-tune the YOLOv3 model for weapon detection. This included downloading and setting up the pre-trained weights and configuration files, adjusting parameters to balance detection accuracy and speed, and handling the real-time processing of video streams. Ensuring the system could accurately detect weapons in various lighting conditions and from different angles was another significant consideration. The thought process involved iterative testing and validation to optimize detection performance while maintaining real-time processing capabilities.",
+            icon: FaBrain,
+        },
+        {
+            id: 3,
+            name: "Lessons Learned",
+            description:"This project highlighted the importance of leveraging pre-trained models for complex tasks like object detection. Working with YOLOv3 demonstrated the effectiveness of using advanced deep learning algorithms for real-time applications. We learned the critical role of proper model configuration and the impact of parameters such as confidence thresholds and non-maxima suppression on detection accuracy. Additionally, integrating the detection system with real-time video streams provided insights into practical implementation challenges, such as handling video feed stability and processing speed.",
+            icon: SiFuturelearn,
+        },
+    ];
+    
+    const dict = {
+        name: 'Real-Time Weapon Detection Using YOLOv3',
+        git: "https://github.com/keshavanand",
+        deploy: "#",
+        description: "This project focuses on developing a real-time weapon detection system using the YOLOv3 (You Only Look Once) object detection algorithm. The system can detect and identify weapons in video streams or images, providing a crucial tool for enhancing security measures in various environments. The project involves setting up and training the YOLOv3 model, processing video input, detecting weapons, and displaying detection results in real-time.",
+        libraries: [{link:"https://www.python.org/", image:"https://banner2.cleanpng.com/20180715/phb/kisspng-python-javascript-logo-clojure-python-logo-download-5b4ba705f356d3.4338622815316846139967.jpg", name:"Python"},
+                    {link:"https://opencv.org/", image:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/OpenCV_Logo_with_text.png/487px-OpenCV_Logo_with_text.png", name:"OpenCV"},
+                    {link:"https://github.com/ultralytics/yolov3", image:"https://raw.githubusercontent.com/ultralytics/assets/main/yolov3/banner-yolov3.png", name:"YOLOv3"},
+                    {link:"https://numpy.org/", image:"https://logosandtypes.com/wp-content/uploads/2024/02/NumPy.png", name:"Numpy"},
+        ],
+        image: "./weapon_ai.png"
+    }
+    return <Slide features={backcountryFeatures} dicts={dict} />
+    
+}

@@ -18,7 +18,7 @@ import { Blog, Shop, Social } from "./projects/DjangoProjects";
 import { useState } from "react";
 import { Medium } from "./projects/NodeReactProjects";
 import { Paytm } from "./projects/NextProjects";
-import { Spam, Ksi } from "./projects/AIProjects";
+import { Spam, Ksi, Weapon } from "./projects/AIProjects";
 import {Hospital} from "./projects/AndroidProjects"
 const Projects = () => {
 	const settings = {
@@ -33,7 +33,7 @@ const Projects = () => {
 	};
 
 	const DjangoProjects = () => <Slider {...settings} ><Blog/><Shop/><Social/></Slider>
-	const AIProjectOne = () => <Slider {...settings}><Spam/><Ksi/></Slider>
+	const AIProjectOne = () => <Slider {...settings}><Weapon/><Spam/><Ksi/></Slider>
 	const AllProjects = () => <Slider {...settings}><Blog/><Spam/><Medium/><Social/><Ksi/><Paytm/></Slider>
 	const NodeProjects = () => <Slider {...settings}><Medium/><Medium/></Slider>
 	const NextProjects = () => <Slider {...settings}><Paytm/><Paytm/></Slider>

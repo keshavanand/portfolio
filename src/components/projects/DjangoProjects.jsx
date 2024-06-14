@@ -29,7 +29,7 @@ export const Blog = () => {
     ];
     
     const dict = {
-        name: 'Django Blog Web Application',
+        name: 'Blog Web Application',
         git: "https://github.com/keshavanand",
         deploy: "#",
         description: "A comprehensive blog application built with Django, featuring user authentication, tagging, post recommendations, full-text search, and a robust commenting system. The project emphasizes SEO optimization and responsive design to enhance user engagement and search engine visibility.",
@@ -71,7 +71,7 @@ export const Social = () => {
     ];
     
     const dict = {
-        name: 'Django Socail App',
+        name: 'Socail App',
         git: "https://github.com/keshavanand",
         deploy: "#",
         description: "A dynamic social networking platform developed using Django and Django Channels, enabling users to share images, follow others, and receive real-time notifications. The site includes social authentication, image bookmarking, and interactive features to foster user interaction and community building.",
@@ -113,7 +113,7 @@ export const Shop = () => {
     ];
     
     const dict = {
-        name: 'Django Shop App',
+        name: 'Shop App',
         git: "https://github.com/keshavanand",
         deploy: "#",
         description: "An e-commerce platform created with Django, featuring a product catalog, shopping cart, and order management system. The project integrates a payment gateway for secure transactions and employs Celery and RabbitMQ for efficient asynchronous task handling, ensuring a smooth and reliable user experience.",
