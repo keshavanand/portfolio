@@ -3,7 +3,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { motion } from "framer-motion";
 import {FaGithub} from "react-icons/fa";
-
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 
 export const Slide = ({features, dicts})=>{
@@ -37,17 +38,20 @@ export const Slide = ({features, dicts})=>{
             <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
                 <div className="flex px-6 flex-col rounded-xl">
                     <motion.div
-                        className="m-auto lg:w-11/12 relative z-10"
+                        className="m-auto lg:w-11/12 relative"
                         whileHover={{
                             scale: 1.2,
                         }}
                     >
-                        <img
-                            className="relative mx-auto rounded-xl border-gray-500 border-2 h-84"
-                            width={490}
-                            src={dicts.image}
-                            alt="image"
-                        />
+                        <Zoom zoomMargin={40} zoomZindex={100}>
+                            <img
+                                className="relative mx-auto rounded-xl border-gray-500 border-2 h-84"
+                                width={490}
+                                height={490}
+                                src={dicts.image}
+                                alt="image"
+                            />
+                        </Zoom>
                     </motion.div>
                     <div className="flex flex-col px-6 py-4">
                         <div className="flex justify-between">
