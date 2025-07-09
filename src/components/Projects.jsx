@@ -1,98 +1,198 @@
-/* eslint-disable no-unused-vars */
-import { GlobeAltIcon } from "@heroicons/react/outline";
-import { motion } from "framer-motion";
-import {
-	FaReact,
-	FaGithub,
-	FaExternalLinkAlt,
-	FaBrain,
-} from "react-icons/fa";
-import {
-	SiTailwindcss,
-	SiFuturelearn,
-} from "react-icons/si";
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import { Blog, Shop, Social } from "./projects/DjangoProjects";
-import { useState } from "react";
-import { Medium } from "./projects/NodeReactProjects";
-import { Paytm } from "./projects/NextProjects";
-import { Spam, Ksi, Weapon } from "./projects/AIProjects";
-import {Hospital} from "./projects/AndroidProjects"
-const Projects = () => {
-	const settings = {
-		dots: true,
-		infinite: true,
-		speed: 500,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		autoplay: true,
-		autoplaySpeed: 3000,
-		arrows: true
-	};
+import { motion } from 'framer-motion'
+import { useInView } from 'framer-motion'
+import { useRef, useState } from 'react'
+import { ProjectCard } from './ProjectCard'
+import { ProjectModal } from './ProjectModal'
 
-	const DjangoProjects = () => <Slider {...settings} ><Blog/><Shop/><Social/></Slider>
-	const AIProjectOne = () => <Slider {...settings}><Weapon/><Spam/><Ksi/></Slider>
-	const AllProjects = () => <Slider {...settings}><Blog/><Spam/><Medium/><Social/><Ksi/><Paytm/></Slider>
-	const NodeProjects = () => <Slider {...settings}><Medium/><Medium/></Slider>
-	const NextProjects = () => <Slider {...settings}><Paytm/><Paytm/></Slider>
-	const AndroidProjects = () => <Slider {...settings}><Hospital/><Hospital/></Slider>
+export function Projects() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const [selectedProject, setSelectedProject] = useState(null)
+  const [activeFilter, setActiveFilter] = useState('all')
 
+  const projects = [
+    {
+      id: 1,
+      title: "Blog Web Application",
+      category: "django",
+      description: "A comprehensive blog application built with Django, featuring user authentication, tagging, post recommendations, and full-text search.",
+      image: "./blog-django.png",
+      technologies: ["Django", "PostgreSQL", "Bootstrap", "JavaScript"],
+      github: "https://github.com/keshavanand",
+      demo: "#",
+      features: [
+        "User authentication and authorization",
+        "Advanced tagging system with recommendations",
+        "Full-text search with PostgreSQL",
+        "SEO optimization and responsive design",
+        "Robust commenting system"
+      ]
+    },
+    {
+      id: 2,
+      title: "Spam Detection System",
+      category: "ai",
+      description: "Machine learning system for detecting spam in social media comments using NLP and classification algorithms.",
+      image: "./kattperry_ai_comment.png",
+      technologies: ["Python", "NLTK", "Scikit-learn", "Pandas"],
+      github: "https://github.com/keshavanand",
+      demo: "#",
+      features: [
+        "Text preprocessing with NLTK",
+        "TF-IDF feature extraction",
+        "Naive Bayes classification",
+        "Real-time spam detection",
+        "Cross-validation for model reliability"
+      ]
+    },
+    {
+      id: 3,
+      title: "Modern Blogging Platform",
+      category: "react",
+      description: "A modern blogging platform with serverless backend, featuring secure authentication and responsive design.",
+      image: "./medium.png",
+      technologies: ["React", "Cloudflare Workers", "TypeScript", "Prisma"],
+      github: "https://github.com/keshavanand",
+      demo: "#",
+      features: [
+        "Serverless backend with Cloudflare Workers",
+        "JWT-based authentication",
+        "TypeScript for type safety",
+        "Responsive design with Tailwind CSS",
+        "Real-time content management"
+      ]
+    },
+    {
+      id: 4,
+      title: "Social Networking Platform",
+      category: "django",
+      description: "Dynamic social platform with real-time notifications, image sharing, and social authentication.",
+      image: "./social.png",
+      technologies: ["Django", "Django Channels", "PostgreSQL", "OAuth"],
+      github: "https://github.com/keshavanand",
+      demo: "#",
+      features: [
+        "Real-time notifications with Django Channels",
+        "Social authentication with OAuth",
+        "Image bookmarking and sharing",
+        "User following system",
+        "Interactive community features"
+      ]
+    },
+    {
+      id: 5,
+      title: "Traffic Accident Classifier",
+      category: "ai",
+      description: "ML model predicting traffic accident severity using environmental data and deployed as a web API.",
+      image: "./ksi_ai.png",
+      technologies: ["Python", "Flask", "Scikit-learn", "TensorFlow"],
+      github: "https://github.com/keshavanand",
+      demo: "#",
+      features: [
+        "Machine learning model for severity prediction",
+        "Web API deployment with Flask",
+        "Real-time inference capabilities",
+        "Data preprocessing and feature engineering",
+        "Urban planning insights"
+      ]
+    },
+    {
+      id: 6,
+      title: "Payment Platform",
+      category: "next",
+      description: "Comprehensive payment solution with QR codes, bank transfers, and merchant features.",
+      image: "./paytm.png",
+      technologies: ["Next.js", "Express", "PostgreSQL", "Prisma"],
+      github: "https://github.com/keshavanand",
+      demo: "#",
+      features: [
+        "Secure money transfers via phone/QR",
+        "Bank webhook integration",
+        "Merchant QR code generation",
+        "Multi-user role management",
+        "Real-time transaction updates"
+      ]
+    }
+  ]
 
-	const [showoProjects, setProjects] = useState(AllProjects);
+  const filters = [
+    { id: 'all', label: 'All Projects' },
+    { id: 'django', label: 'Django' },
+    { id: 'ai', label: 'AI/ML' },
+    { id: 'react', label: 'React' },
+    { id: 'next', label: 'Next.js' }
+  ]
 
-	const renderProjects = (value) =>{
-		switch(value) {
-			case 'django':
-				setProjects(DjangoProjects)
-				break;
-			case 'AI':
-				setProjects(AIProjectOne)
-				break;
-			case 'rn':
-				setProjects(NodeProjects)
-				break;
-			case 'next':
-				setProjects(NextProjects)
-				break
-			case 'android':
-				setProjects(AndroidProjects)
-				break
-			default:
-				setProjects(AllProjects)
-		}
-	}
+  const filteredProjects = activeFilter === 'all' 
+    ? projects 
+    : projects.filter(project => project.category === activeFilter)
 
+  return (
+    <section id="projects" className="py-20 bg-slate-50 dark:bg-slate-900">
+      <div className="max-w-6xl mx-auto px-6">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+            Featured Projects
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto mb-8"></div>
+          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+            A showcase of my recent work spanning web development, AI/ML, and full-stack applications
+          </p>
+        </motion.div>
 
-	return (
-		<div id="Projects" className="pt-1 mx-64 animate-moving-line ">
-			<div className="lg:space-x-6 mt-20 xl:mt-28">
-				<div className="text-black dark:text-white">
-					<h2 className="flex gap-2 font-bold mb-4 text-4xl">
-						<motion.div
-							whileHover={{
-								scale: [1, 3, 3, 1, 1],
-								rotate: [0, 0, 270, 270, 0],
-							}}
-						>
-							✏️
-						</motion.div>
-						Projects
-						<div className="flex justify-evenly mx-auto border-2 rounded-full py-1 w-2/3 text-lg">
-							<button className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium h-9 px-4 py-2 hover:bg-gray-500 hover:rounded-lg focus:bg-gray-500 focus:rounded-lg" onClick={()=> renderProjects('django')}>Django</button>
-							<button className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium h-9 px-4 py-2 hover:bg-gray-500 hover:rounded-lg focus:bg-gray-500 focus:rounded-lg" onClick={()=> renderProjects('AI')}>AI</button>
-							<button className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium h-9 px-4 py-2 hover:bg-gray-500 hover:rounded-lg focus:bg-gray-500 focus:rounded-lg" onClick={()=> renderProjects('android')}> Android Studio</button>
-							<button className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium h-9 px-4 py-2 hover:bg-gray-500 hover:rounded-lg focus:bg-gray-500 focus:rounded-lg" onClick={()=> renderProjects('rn')}>React+Node</button>
-							<button className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium h-9 px-4 py-2 hover:bg-gray-500 hover:rounded-lg focus:bg-gray-500 focus:rounded-lg" onClick={()=> renderProjects('next')}>Next</button>
-						</div>
-					</h2>
-							{showoProjects}
+        {/* Filter Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex flex-wrap justify-center gap-4 mb-12"
+        >
+          {filters.map((filter) => (
+            <button
+              key={filter.id}
+              onClick={() => setActiveFilter(filter.id)}
+              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+                activeFilter === filter.id
+                  ? 'bg-indigo-600 text-white shadow-lg'
+                  : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-700'
+              }`}
+            >
+              {filter.label}
+            </button>
+          ))}
+        </motion.div>
 
-					</div>
-				</div>
-			</div>
-	);
-};
+        {/* Projects Grid */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {filteredProjects.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              index={index}
+              onClick={() => setSelectedProject(project)}
+            />
+          ))}
+        </motion.div>
+      </div>
 
-export default Projects;
+      {/* Project Modal */}
+      {selectedProject && (
+        <ProjectModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
+    </section>
+  )
+}

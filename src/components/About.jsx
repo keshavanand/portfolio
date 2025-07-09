@@ -1,109 +1,185 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion'
+import { useInView } from 'framer-motion'
+import { useRef } from 'react'
+import { 
+  CodeBracketIcon, 
+  CpuChipIcon, 
+  AcademicCapIcon,
+  LightBulbIcon 
+} from '@heroicons/react/24/outline'
 
-const AboutSection = () => {
+export function About() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+
+  const skills = [
+    {
+      category: "Frontend",
+      items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"]
+    },
+    {
+      category: "Backend", 
+      items: ["Node.js", "Django", "Express", "PostgreSQL", "Prisma"]
+    },
+    {
+      category: "AI & ML",
+      items: ["Python", "TensorFlow", "Scikit-learn", "OpenCV", "NLTK"]
+    },
+    {
+      category: "Tools & Others",
+      items: ["Git", "Docker", "AWS", "Cloudflare", "Firebase"]
+    }
+  ]
+
+  const highlights = [
+    {
+      icon: CodeBracketIcon,
+      title: "Full-Stack Development",
+      description: "Building scalable web applications with modern technologies and best practices."
+    },
+    {
+      icon: CpuChipIcon,
+      title: "AI & Machine Learning",
+      description: "Developing intelligent systems and exploring the potential of artificial intelligence."
+    },
+    {
+      icon: AcademicCapIcon,
+      title: "Continuous Learning",
+      description: "Currently pursuing Diploma in AI while staying updated with latest tech trends."
+    },
+    {
+      icon: LightBulbIcon,
+      title: "Innovation Focus",
+      description: "Creating cutting-edge solutions that solve real-world problems effectively."
+    }
+  ]
+
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 lg:space-x-6 mt-10 mb-10">
-      <div className="text-gray-500  text-md font-bold">
-        <h1 className="text-gray-800  dark:text-white flex gap-2 font-bold mb-4 text-4xl">
+    <section id="about" className="py-20 bg-white dark:bg-slate-800">
+      <div className="max-w-6xl mx-auto px-6">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+            About Me
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto mb-8"></div>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left side - Text content */}
           <motion.div
-            whileHover={{
-              scale: [1, 3, 3, 1, 1],
-              rotate: [0, 0, 270, 270, 0],
-            }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="space-y-6"
           >
-            ⚡
+            <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+              I'm a passionate Full-Stack Software Engineer currently pursuing a Diploma in 
+              Artificial Intelligence. I love building innovative web applications and AI-powered 
+              solutions that make a real difference.
+            </p>
+            
+            <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+              My journey in technology is driven by curiosity and a constant desire to learn. 
+              I specialize in React, Node.js, and Django, while exploring the fascinating world 
+              of artificial intelligence and machine learning.
+            </p>
+
+            <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+              I believe AI has the potential to transform our world for the better, and I'm 
+              excited to be part of this revolution. When I'm not coding, you'll find me 
+              working on side projects or learning about the latest tech trends.
+            </p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="pt-6"
+            >
+              <a
+                href="mailto:keshavanandsingh89@gmail.com"
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+              >
+                Let's Connect
+              </a>
+            </motion.div>
           </motion.div>
-          About Me
-        </h1>
-        <span className="block mb-5 font-semibold dark:text-white">
-        I am a Full-Stack Software Engineer currently pursuing Diploma in Artificial Intellignece.
-        </span>
-        <span className="block mb-5 font-semibold dark:text-white">
-        Building web application and AI apps right now - using React, Node and Django.
-        </span>
-        <span className="block mb-5 font-semibold dark:text-white">
-        I'm a constant learner and love to build side projects using cutting-edge toolsets adapting to the ever-changing landscape.
-        </span>
-        <span className="block mb-5 font-semibold dark:text-white">
-            I'm really excited about artificial intelligence because I believe it can change the world for the better. I love learning about how AI works, like teaching computers to understand language or make decisions. My passion for AI keeps me motivated to learn more and find new ways to use it to make cool stuff that helps people.        </span>
-        <span className="block mb-5 font-semibold dark:text-white">
-        Want to chat? Let's connect!
-        </span>
-      </div>
-      <motion.div
-        className="m-auto pt-0"
-        whileHover={{
-          scale: 1.1,
-        }}
-      >
-        <video className="rounded-lg" preload="auto" muted loop autoPlay>
-          <source src="https://cdnl.iconscout.com/lottie/premium/thumb/man-coding-on-laptop-4337847-3618984.mp4" />
-        </video>
-      </motion.div>
-    </div>
-  );
-};
 
-const AboutSectionFooter = () => {
-  return (
-    <div className="flex flex-col gap-3">
-      <span className="m-auto font-bold block text-4xl md:text-5xl text-black dark:text-white">
-        Let's Get in Touch
-      </span>
-      <div className="m-auto flex space-x-6 mb-3">
-        <a href="https://www.linkedin.com/in/keshav-anand-singh-8b4427154/">
-          <motion.button
-            whileHover={{
-              scale: 1.2,
-              textShadow: "0px 0px 10px rgba(255, 255, 255)",
-            }}
-            whileTap={{ scale: 0.8 }}
-            type="button"
-            className="inline-flex justify-around h-12 w-36 items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-lg shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          {/* Right side - Highlights */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="grid gap-6"
           >
-            <img
-              alt="linkedIn-link"
-              className="w-8 h-8"
-              src="https://img.icons8.com/ios-filled/50/000000/linkedin.png"
-            />
-            <span className="ml-2 font-md text-base sm:text-lg">LinkedIn</span>
-          </motion.button>
-        </a>
-        <a href="mailto:keshavanandsingh89@gmail.com">
-          <motion.button
-            whileHover={{
-              scale: 1.2,
-              textShadow: "0px 0px 10px rgba(255, 255, 255)",
-            }}
-            whileTap={{ scale: 0.8 }}
-            type="button"
-            className="inline-flex justify-around h-12 w-32 items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-lg shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-          >
-            <img
-              alt="email-link"
-              className="w-8 h-8"
-              src="https://img.icons8.com/ios-filled/50/000000/mail.png"
-            />
-            <span className="ml-2 font-md text-base sm:text-lg">E-mail</span>
-          </motion.button>
-        </a>
-      </div>
-      <span className="px-20 text-center m-auto font-semibold md:font-bold block text-md sm:text-2xl text-black dark:text-white">
-        Built with ❤️ using React, Tailwind and Framer Motion
-      </span>
-    </div>
-  );
-};
-
-const About = () => {
-  return (
-    <div className="pt-20 mx-64 animate-moving-line ">
-        <div className="pt-5 flex flex-col gap-28" id="About">
-        <AboutSection />
-        <AboutSectionFooter/>
+            {highlights.map((highlight, index) => (
+              <motion.div
+                key={highlight.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                className="flex items-start space-x-4 p-6 bg-slate-50 dark:bg-slate-700 rounded-xl hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="flex-shrink-0 p-2 bg-indigo-100 dark:bg-indigo-900 rounded-lg">
+                  <highlight.icon className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+                    {highlight.title}
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-300">
+                    {highlight.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
-    </div>
-  );
-};
 
-export default About;
+        {/* Skills Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-20"
+        >
+          <h3 className="text-2xl font-bold text-slate-900 dark:text-white text-center mb-12">
+            Skills & Technologies
+          </h3>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {skills.map((skillGroup, index) => (
+              <motion.div
+                key={skillGroup.category}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
+                className="text-center"
+              >
+                <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">
+                  {skillGroup.category}
+                </h4>
+                <div className="space-y-2">
+                  {skillGroup.items.map((skill) => (
+                    <span
+                      key={skill}
+                      className="inline-block px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-sm rounded-full mr-2 mb-2"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
